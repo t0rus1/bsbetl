@@ -1,0 +1,23 @@
+[
+    {
+        "name": "ovp_example_param",
+        "calculation": "none",
+        "min": 100,
+        "max": 1000000,
+        "setting": 4000
+    },
+    {
+        "name": "ovp_lazy_turnover",
+        "calculation": "laziness",
+        "min": 100,
+        "max": 1000000,
+        "setting": 4000
+    },
+    {
+        "name": "ovp_lazy_zerovol_rows",
+        "calculation": "laziness",
+        "min": 0,
+        "max": 998,
+        "setting": 50
+    }
+]

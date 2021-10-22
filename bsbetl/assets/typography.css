@@ -1,0 +1,232 @@
+body {
+    font-family: sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: black
+}
+div {
+    margin: 1px;
+}
+
+form {
+    width: 100%;
+    overflow: hidden;
+    /* background-color: rgb(239, 252, 251); */
+}
+input[type=text] {
+    padding: 3px;   
+    width: 100%;
+    background-color: rgb(239, 252, 251);
+}
+span {
+    display: block;
+    overflow: hidden;
+    padding-right:10px;
+}
+button.filter-query-btn {
+    float: right;
+}
+
+/*
+input[type=checkbox] {
+    padding-left: 5px;
+}
+*/
+
+.bsbetl-cmd {
+    font-size: large;
+    margin: 5px;
+    padding: 5px;
+}
+
+.nav-strip {
+    margin-top: 5px;
+}
+
+.plain-link {
+    border: none;
+    background-color: transparent;
+    padding-left: 10px;
+    text-decoration: underline blue;
+}
+
+.link-button {
+    border: none;
+    background-color: white;
+    padding-left: 10px;
+    text-decoration: underline blue;
+}
+
+.link-button-refresh {
+    border: single;
+    border-radius: 5px;
+    background-color: lightblue;
+    padding-left: 10px;
+    margin-left: 5px;
+    /*text-decoration: underline blue;*/
+}
+
+.status-msg {
+    margin: 3px;
+    padding:2px;
+    color: firebrick;
+    background-color: rgb(247, 239, 239);
+}
+
+.share-info {
+    position:relative;
+    top: 12px;
+    padding:5px;
+    margin-left: 5px;
+    color: firebrick;
+    background-color: rgb(247, 239, 239);
+}
+
+.status-markdown {
+    margin: 3px;
+    padding: 3px;
+    color: darkslateblue;
+    background-color: rgb(247, 239, 239);
+}
+
+.dash-link {
+    /* float: right; NOPE, causes problems */
+    padding: 3px;
+    margin-left: 10px;
+    /*border-radius: 5px;
+    border-style: solid;
+    border: 1px blue*/
+}
+
+.dash-datatable {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.show-hide-container {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+
+.filter-notes {
+    padding: 6px;   
+    margin-bottom: 6px;
+    color: slateblue;
+    font-size: small;
+}
+
+.filter-query {
+    padding: 3px;   
+    margin-bottom: 6px;
+    color: slateblue;
+    font-size: small;
+    background-color: lightgoldenrodyellow;
+}
+
+.filter-query-btn {   
+    display: inline;
+    float: right;
+    background-color: lightgoldenrodyellow;
+    padding: 3px;   
+}
+
+.sw-muted-label {
+    color: darkgreen;
+    font-size: small;
+}
+
+.sw-emphasis-label {
+    color: crimson;
+    font-size: x-large;
+}
+
+
+.sw-muted-legend {
+    color: rgb(100, 15, 0);
+    font-size: small;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.sw-note-this {
+    color: crimson;
+    padding-left: 5px;
+}
+
+.stages-slider {
+    width: 400px;
+    margin: 10px;
+    /*float: left;*/
+    overflow: visible;
+}
+
+.calc-parameters-form {
+    background-color: rgb(231, 231, 231); 
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.calc-parameters-form input {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.last-date-info {
+    color: darkgreen;
+    margin-left: 30px;
+    font-size: small;
+}
+
+/*
+.ribbon-highlight{
+    position:relative;
+    margin:0.1em;
+  }
+  .ribbon-highlight:before{
+    content:"";
+    z-index:-1;
+    left:-0.5em;
+    top:0.1em;
+    border-width:0.5em;
+    border-style:solid;
+    border-color:lightgreen;
+    position:absolute;
+    width:100%;
+    border-left-color:transparent;
+    border-right-color:transparent;
+  }
+*/
+
+.border-highlight{
+    border:1px dashed rgb(155, 130, 130);  
+    padding:0.03em 0.25em;
+    text-align: center;    
+}
+
+.tab-header {
+    text-align: center;    
+}
+
+.dropdown {
+    background-color: lightsteelblue;
+    color: steelblue;
+}
+
+/*
+button.export {
+    padding: 5px;
+}
+button.export {
+    visibility: hidden;
+}
+button.export:after {
+    content:'Save As'; 
+    visibility: visible;
+    display: block;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: lightblue;
+}
+*/

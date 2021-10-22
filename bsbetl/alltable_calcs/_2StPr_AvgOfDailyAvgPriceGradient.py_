@@ -1,0 +1,137 @@
+import logging
+import math
+from datetime import date
+import numpy as np
+from numpy.core.numeric import NaN
+
+import pandas as pd
+from bsbetl.ov_helpers import global_ov_update
+from bsbetl.alltable_calcs import Calculation
+from bsbetl.alltable_calcs.at_params import at_calc_params
+from bsbetl.calc_helpers import first_non_zero, last_trading_row_index
+
+
+class _2StPr_AvgOfDailyAveragePriceGradient(Calculation.Calculation):
+
+    def __init__(self):
+        super().__init__('AvgOfDailyAveragePriceGradient')
+        self.description = 'Average of Daily Avg Price Gradient calculation'
+        self.dependents = ['price', 'DAP', ]
+        self.at_computeds = ['DAPGr', 'DAPGrAvSh',
+                             'DAPGrAvMi', 'DAPGrAvLo', 'DAPGrDiSl', 'DAPGrDiF']
+        self.ov_computeds = ['DAPGr', 'DAPGrAvSh',
+                             'DAPGrAvMi', 'DAPGrAvLo', 'DAPGrDiSl', 'DAPGrDiF', 'DAPGrDiF.D-1', 'pnt1_DAPGrDiF', 'pnt3_DAPGrDiF']
+
+    def calculate(self, df: pd.DataFrame, share_num: str, dates_in_df: list, top_up: bool, stage: int):
+        ''' Implementation of Gunther's 210207 Calc Daily Prices Initial Stage.odt document
+            Daily Prices 4. Find the Average of the Daily Average Price Gradient,
+            "DAPGrAv" and the Distances from it "DAPGrDi"
+        '''
+
+        assert stage == 2, f'{self.name} calculation should only run at stage 2'
+        # self.prepare_columns(df)
+
+        # vector way of calculating DAPgr for entire column
+        df['DAPGr'] = df['DAP'] / df['DAP'].shift(1)
+        df.loc[~np.isfinite(df['DAPGr']), 'DAPGr'] = 1.
+        # patch up NaN values which may arise
+        df['DAPGr'].interpolate(method='linear', limit_direction='forward')
+
+        prior_idx = None
+        cur_idx = None
+        DAPGr = 1.00
+        DAPGrAvSh = 1.00
+        DAPGrAvSh_stack = []
+        DAPGrAvMi = 1.00
+        DAPGrAvLo = 1.00
+
+        DAPGrDiSl = 0.00
+        DAPGrDiSl_stack = []
+
+        DAPGrDiF = 0.00
+
+        # compute the rows which follow
+        for cur_idx, row in df.iterrows():
+            # print(cur_idx)
+            if cur_idx == df.index[0]:
+                # 4a) The initial DAPGrAvD is  1.
+                df.at[cur_idx, 'DAPGrAvSh'] = 1.00
+                df.at[cur_idx, 'DAPGrAvMi'] = 1.00
+                df.at[cur_idx, 'DAPGrAvLo'] = 1.00
+                # distances
+                df.at[cur_idx, 'DAPGrDiSl'] = 0.00
+                df.at[cur_idx, 'DAPGrDiF'] = 0.00
+                prior_idx = cur_idx
+                continue
+            # DAPGrAvx D = DAPGrAvx D-1 + Yx DAPGrAv * (DAPGrD - DAPGrAvx D-1)
+            # short term
+            DAPGrAvSh = df.at[prior_idx, 'DAPGrAvSh'] + \
+                at_calc_params['atp_YshDAPGrAv']['setting'] * \
+                (df.at[cur_idx, 'DAPGr'] - df.at[prior_idx, 'DAPGrAvSh'])
+
+            DAPGrAvSh_stack.append(DAPGrAvSh) # need to be able to access D-1 and D-2 values
+
+            # middle term
+            DAPGrAvMi = df.at[prior_idx, 'DAPGrAvMi'] + \
+                at_calc_params['atp_YmiDAPGrAv']['setting'] * \
+                (df.at[cur_idx, 'DAPGr'] - df.at[prior_idx, 'DAPGrAvMi'])
+            # long term
+            DAPGrAvLo = df.at[prior_idx, 'DAPGrAvLo'] + \
+                at_calc_params['atp_YloDAPGrAv']['setting'] * \
+                (df.at[cur_idx, 'DAPGr'] - df.at[prior_idx, 'DAPGrAvLo'])
+
+            # 4b) limit maximum values
+            df.at[cur_idx, 'DAPGrAvSh'] = min(DAPGrAvSh, 1.03)
+            df.at[cur_idx, 'DAPGrAvMi'] = min(DAPGrAvMi, 1.03)
+            df.at[cur_idx, 'DAPGrAvLo'] = min(DAPGrAvLo, 1.03)
+            # limit minimum values
+            df.at[cur_idx, 'DAPGrAvSh'] = max(DAPGrAvSh, 0.97)
+            df.at[cur_idx, 'DAPGrAvMi'] = max(DAPGrAvMi, 0.97)
+            df.at[cur_idx, 'DAPGrAvLo'] = max(DAPGrAvLo, 0.97)
+
+            # 4c) DAPGrDi
+            # The slow one:
+            DAPGrDiSl = 0.9 * df.at[prior_idx, 'DAPGrDiSl'] + \
+                math.fabs(df.at[cur_idx, 'DAPGr'] -
+                          df.at[cur_idx, 'DAPGrAvLo'])
+
+            DAPGrDiSl_stack.append(DAPGrDiSl) # we need to be able to access D-1
+
+            df.at[cur_idx, 'DAPGrDiSl'] = DAPGrDiSl
+            # The fast
+            DAPGrDiF = 0.7 * df.at[prior_idx, 'DAPGrDiF'] + \
+                math.fabs(df.at[cur_idx, 'DAPGr'] -
+                          df.at[cur_idx, 'DAPGrAvSh'])
+            df.at[cur_idx, 'DAPGrDiF'] = DAPGrDiF
+
+            prior_idx = cur_idx
+
+        #print(f'share= {share_num}, cur_idx = {cur_idx} DAPGrDiF={DAPGrDiF}')
+
+        # write last computed row's values to Ov
+        #ov_computeds = ['DAPGr', 'DAPGrAvSh','DAPGrAvMi', 'DAPGrAvLo', 'DAPGrDiSl', 'DAPGrDiF']
+        # ov_column_update(share_num, 'DAPGr', DAPGr) not needed
+        try:
+            global_ov_update(share_num, 'DAPGrAvSh', DAPGrAvSh)
+            DAPGrAvSh_stack.pop() # discard last one
+            global_ov_update(share_num, 'DAPGrAvSh.D-1', DAPGrAvSh_stack.pop())
+            global_ov_update(share_num, 'DAPGrAvSh.D-2', DAPGrAvSh_stack.pop())
+
+
+            global_ov_update(share_num, 'DAPGrAvMi', DAPGrAvMi)
+            global_ov_update(share_num, 'DAPGrAvLo', DAPGrAvLo)
+
+            global_ov_update(share_num, 'DAPGrDiSl', DAPGrDiSl)
+            DAPGrDiSl_stack.pop()
+            global_ov_update(share_num, 'DAPGrDiSl.D-1', DAPGrDiSl_stack.pop())
+            
+            # we need DAPGrDiF.D-1 also in the Ov
+            global_ov_update(share_num, 'DAPGrDiF', DAPGrDiF)
+            global_ov_update(share_num, 'DAPGrDiF.D-1',df.loc[df.index[-2],'DAPGrDiF'])
+
+
+            global_ov_update(share_num, 'pnt1_DAPGrDiF', 0.1*DAPGrDiF)
+            global_ov_update(share_num, 'pnt3_DAPGrDiF', 0.3*DAPGrDiF)
+        except IndexError as exc:
+            logging.error(f'_2StPr_AvgOfDailyAvgPriceGradient exception {exc}')
+

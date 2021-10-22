@@ -1,0 +1,18 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\ShwPyNotebooks"
+		},
+		{
+			"path": "..\\..\\..\\..\\..\\..\\BsbEtl"
+		}
+	],
+	"settings": {
+		"workbench.iconTheme": "vs-minimal",
+		"python.dataScience.jupyterServerURI": "local",
+		"python.pythonPath": "venv\\Scripts\\python.exe"
+	}
+}

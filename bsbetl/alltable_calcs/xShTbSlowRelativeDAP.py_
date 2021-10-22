@@ -1,0 +1,76 @@
+import logging
+import math
+from datetime import date
+from numpy.core.numeric import NaN
+
+import pandas as pd
+from bsbetl.alltable_calcs import Calculation
+from bsbetl.alltable_calcs.at_params import at_calc_params
+from bsbetl.calc_helpers import first_non_zero, last_trading_row_index
+
+
+class ShTbSlowRelativeDAP(Calculation.Calculation):
+
+    def __init__(self):
+        super().__init__('ShTbSlowRelativeDAP')
+        self.description = 'Short Term backwards Slow Relative Daily Average Price calculation'
+        self.dependents = ['price', 'RDAP']
+        self.at_computeds = ['ShTbSRDAP1']
+        self.ov_computeds = []  # none
+
+    def calculate(self, df: pd.DataFrame, share_num: str, dates_in_df: list, top_up: bool, stage: int):
+
+        assert stage == 2, f'{self.name} calculation should only run at stage 2'
+
+        self.prepare_columns(df)
+
+        # iterate in reverse order
+        RDAP_100 = 0.00
+        DAP_100 = 0.00
+        row_index_day_later = 0  # will be properly assigned below
+        days_traversed = 0
+        for row_index, row in df[::-1].iterrows():
+            # Case 1:
+            if row_index == df.index[-1]:
+                # first row, ie day '100', grab 'RDAP'
+                RDAP_100 = df.at[row_index, 'RDAP']
+                DAP_100 = df.at[row_index, 'DAP']
+                row_index_day_later = row_index
+                days_traversed = days_traversed+1
+                continue
+            if row_index == df.index[-2]:
+                RDAP_99 = df.at[row_index, 'RDAP']
+                if RDAP_99 > RDAP_100:
+                    df.at[row_index, 'ShTbSRDAP1'] = DAP_100 + \
+                        at_calc_params['atp_Y1ShTbRDAPu']['setting'] * \
+                        (RDAP_99 - RDAP_100)
+                else:
+                    df.at[row_index, 'ShTbSRDAP1'] = DAP_100 - \
+                        at_calc_params['atp_Y1ShTbRDAPd']['setting'] * \
+                        (RDAP_100 - RDAP_99)
+                row_index_day_later = row_index
+                days_traversed = days_traversed+1
+                continue
+
+            # 4b) For the next days ( day 98, 97, 96, ...) it is the same but now we have an ShTbSRDAPD to go on with:
+            ShTbSRDAPD1_later = df.at[row_index_day_later, 'ShTbSRDAP1']
+            RDAPD_earlier = df.at[row_index, 'RDAP']  # RDAP of day before
+            # Case 1:
+            # If the RDAP of day before (RDAPD-1) is bigger than the of the ShTbSRDAPD,
+            if RDAPD_earlier > ShTbSRDAPD1_later:
+                df.at[row_index, 'ShTbSRDAP1'] = ShTbSRDAPD1_later + \
+                    at_calc_params['atp_Y1ShTbRDAPu']['setting'] * \
+                    (RDAPD_earlier - ShTbSRDAPD1_later)
+            else:
+                df.at[row_index, 'ShTbSRDAP1'] = ShTbSRDAPD1_later - \
+                    at_calc_params['atp_Y1ShTbRDAPd']['setting'] * \
+                    (ShTbSRDAPD1_later - RDAPD_earlier)
+
+            # save this to be able to refer to the day we are moving from
+            row_index_day_later = row_index
+            days_traversed = days_traversed+1
+            # do no more than 20 days
+            if days_traversed >= 20:
+                break
+
+        return

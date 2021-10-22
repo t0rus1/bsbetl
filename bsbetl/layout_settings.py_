@@ -1,0 +1,49 @@
+from bsbetl.func_helpers import save_runtime_config
+from bsbetl import g
+from datetime import date
+from dash.dependencies import Input, Output
+import dash_core_components as dcc
+import dash_html_components as html
+
+from bsbetl.app import app
+from bsbetl.functions import provide_datepicker, read_status_report_md, write_status_report_md
+
+layout_settings = [
+    html.Div(
+        children=[
+            html.H3(
+                id='settings-banner',
+                children=[
+                    html.Span('SETTINGS', className='border-highlight')],
+                className='tab-header'
+            ),
+            html.Label('Charting date range'),
+            dcc.DatePickerRange(
+                id='charts-date-picker-range',
+                display_format='YYYY_MM_DD',
+                month_format='YYYY_MM_DD',
+                min_date_allowed=provide_datepicker('min_date_allowed'),
+                max_date_allowed=provide_datepicker('max_date_allowed'),
+                initial_visible_month=date.today(),
+                start_date=provide_datepicker('start_date'),
+                end_date=provide_datepicker('end_date'),
+                #style={'float': 'right'}
+            ),            
+        ]
+    ),
+]
+
+@app.callback(
+    Output('settings-banner','n_clicks'),
+    Input('charts-date-picker-range','start_date'),
+    Input('charts-date-picker-range','end_date'),    
+    prevent_initial_call=True
+)
+def datepicker_changes(start_date, end_date):
+
+    print(start_date)
+    g.CONFIG_RUNTIME['setting_chart_start'] = start_date
+    g.CONFIG_RUNTIME['setting_chart_end'] = end_date
+    save_runtime_config()
+
+    return 0

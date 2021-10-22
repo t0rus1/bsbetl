@@ -1,0 +1,152 @@
+from bsbetl import functions, g
+from dash.dependencies import Input, Output, State
+import dash_core_components as dcc
+import dash_html_components as html
+
+from bsbetl.app import app
+
+layout_cmd = [
+    html.Div(
+        children=[
+            html.H3(
+                children=[
+                    html.Span('BSBETL COMMANDS', className='border-highlight')],
+                className='tab-header'
+            ),
+            html.Button(
+                children='reset',
+                id='btn-cmd-reset',
+                className='link-button-refresh',
+                title='reset buttons to initialized states',
+                n_clicks=0,
+            ),
+        ]
+    ),
+    html.Div(
+        id='cmd-status-msg',
+        children='NOTE: python terminal interaction is expected - so watch for prompts/messages...',
+        className='status-msg',
+    ),
+    html.Div(
+        children=[
+            dcc.Input(
+                id='input-cmd-username',
+                type='text',
+                placeholder='BSB username',
+                debounce=True,
+            ),
+            html.Button(
+                children='fetch-catalog',
+                id='btn-cmd-catalog',
+                className='bsbetl-cmd',
+                title='get the inhalt.txt catalog from BSB',
+                n_clicks=0,
+            ),
+            html.Button(
+                children='fetch-txt',
+                id='btn-cmd-txt',
+                className='bsbetl-cmd',
+                title='get the *.txt files from BSB',
+                n_clicks=0,
+            ),
+        ]
+    ),
+    html.Div(
+        children=[
+            html.Button(
+                children='process-1',
+                id='btn-cmd-process-1',
+                className='bsbetl-cmd',
+                title='produce CSV files in OUT_BY_DAY folder from raw TXT files (in IN folder) and move same to CONSUMED folder',
+                n_clicks=0,
+            ),
+            html.Button(
+                children='process-2',
+                id='btn-cmd-process-2',
+                className='bsbetl-cmd',
+                title='farm out individual trades found in the OUT_BY_DAY folder into separate share-specific folders',
+                n_clicks=0,
+            ),
+            html.Button(
+                children='process-3',
+                id='btn-cmd-process-3',
+                className='bsbetl-cmd',
+                title='perform calculations, from scratch, on each share in the Default sharelist and create All-tables for each, along with Overview tables. Both minutely and daily variables are calculated',
+                n_clicks=0,
+            ),
+            html.Button(
+                children='process-3-topup',
+                id='btn-cmd-process-3-topup',
+                className='bsbetl-cmd',
+                title='does the same as process-3 but preserves tables already calculated - merely appends newly arrived data results',
+                n_clicks=0,
+            ),
+        ]
+    ),
+    html.Div(
+        children=[
+            html.Button(
+                children='results-1',
+                id='btn-cmd-results-',
+                className='bsbetl-cmd',
+                title="Applies '' to sharelist members",
+                n_clicks=0,
+            ),
+            html.Button(
+                children='results-2st-pr',
+                id='btn-cmd-results-',
+                className='bsbetl-cmd',
+                title="Applies '' to sharelist members",
+                n_clicks=0,
+            ),
+            html.Button(
+                children='results-2st-vols',
+                id='btn-cmd-results-',
+                className='bsbetl-cmd',
+                title="Applies '' to sharelist members",
+                n_clicks=0,
+            ),
+            html.Button(
+                children='results-3st-jp',
+                id='btn-cmd-results-',
+                className='bsbetl-cmd',
+                title="Applies '' to sharelist members",
+                n_clicks=0,
+            ),
+            html.Button(
+                children='results-3st-v2d',
+                id='btn-cmd-results-',
+                className='bsbetl-cmd',
+                title="Applies '' to sharelist members",
+                n_clicks=0,
+            ),
+            html.Button(
+                children='results-3st-xnh',
+                id='btn-cmd-results-',
+                className='bsbetl-cmd',
+                title="Applies '' to sharelist members",
+                n_clicks=0,
+            ),
+        ]),
+]
+
+''' callbacks '''
+@app.callback(
+    [Output('btn-cmd-catalog','children'),
+    Output('btn-cmd-catalog','disabled'),
+    ],
+    Input('btn-cmd-catalog','n_clicks'),
+    State('input-cmd-username','value'),
+    prevent_initial_call=True
+)
+def fetch_catalog(n_clicks, username):
+
+    catalog_url = g.SHARE_SERVICE_URL + g.SHARE_SERVICE_CATALOG_NAME
+    print(f'user {username} fetching from {catalog_url} ...')
+
+    local_catalog_name_fq = f'{g.CONTAINER_PATH}\{g.SHARE_SERVICE_CATALOG_NAME}'
+
+    _, result_msg = functions.fetch_txt_catalog(catalog_url, username, local_catalog_name_fq)
+    print(result_msg)
+
+    return [result_msg,True]

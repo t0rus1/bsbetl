@@ -1,0 +1,6 @@
+{
+    "workbench.iconTheme": "vs-minimal",
+    "python.pythonPath": "venv\\Scripts\\python.exe",
+    "workbench.editor.wrapTabs": true,
+    "editor.wordWrapColumn": 132
+}

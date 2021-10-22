@@ -1,0 +1,1664 @@
+{
+    "version": "1.1.92dev0",
+    "minimum analysis_start_date": "2017_01_01",
+    "last_calculations_start_date": "2021_01_19",
+    "default_days_back": 100,
+    "at_page_size": 100,
+    "ov_page_size": 700,
+    "shl_page_size": 2000,
+    "1St_page_size": 100,
+    "2StPr_page_size": 50,
+    "2StVols_page_size": 100,
+    "Combined_1_2_page_size": 20,
+    "3jP_page_size": 200,
+    "3V2d_page_size": 690,
+    "3nH_page_size": 500,
+    "FRT_page_size": 180,
+    "_3jP_list": [
+        [
+            "A0B65S.ETR",
+            "Paion"
+        ]
+    ],
+    "_V2d_list": [
+        [
+            "516790.ETR",
+            "3U Holding AG"
+        ],
+        [
+            "A0KFKB.ETR",
+            "Accentro Real Estate"
+        ],
+        [
+            "A1H8MU.ETR",
+            "Adler Modemaerkte AG"
+        ],
+        [
+            "510300.ETR",
+            "Adva Optical"
+        ],
+        [
+            "676650.ETR",
+            "Aurubis AG"
+        ],
+        [
+            "510200.ETR",
+            "Basler AG"
+        ],
+        [
+            "516810.ETR",
+            "Bauer AG"
+        ],
+        [
+            "520394.ETR",
+            "Brain"
+        ],
+        [
+            "547030.ETR",
+            "CTS Eventim AG"
+        ],
+        [
+            "541910.ETR",
+            "Cancom SE"
+        ],
+        [
+            "A1KAGC.ETR",
+            "Coloplast"
+        ],
+        [
+            "A0KFRJ.ETR",
+            "CytoTools"
+        ],
+        [
+            "553340.ETR",
+            "Deutsche Grundstuecksauktionen"
+        ],
+        [
+            "630500.ETR",
+            "Deutz AG"
+        ],
+        [
+            "927200.ETR",
+            "Dialog Semiconductor"
+        ],
+        [
+            "555060.ETR",
+            "Draegerwerk ST"
+        ],
+        [
+            "554550.ETR",
+            "Drillisch AG"
+        ],
+        [
+            "555063.ETR",
+            "Dr\u00c3\u00a4gerwerk AG"
+        ],
+        [
+            "522000.ETR",
+            "Enbw Energie Baden Wuerttemberg"
+        ],
+        [
+            "531350.ETR",
+            "Energiekontor"
+        ],
+        [
+            "909943.ETR",
+            "Erste Group Bank"
+        ],
+        [
+            "A2ACKK.ETR",
+            "Ferrari NV"
+        ],
+        [
+            "577580.ETR",
+            "Foris Beteiligungs"
+        ],
+        [
+            "660200.ETR",
+            "GEA Group AG"
+        ],
+        [
+            "589540.ETR",
+            "Grammer AG"
+        ],
+        [
+            "608340.ETR",
+            "Hornbach"
+        ],
+        [
+            "623100.ETR",
+            "Infineon"
+        ],
+        [
+            "A0JL46.ETR",
+            "ItN Nanovation"
+        ],
+        [
+            "621993.ETR",
+            "Jungheinrich AG"
+        ],
+        [
+            "657800.ETR",
+            "KHD Humboldt Wedag Int"
+        ],
+        [
+            "A1A6V4.ETR",
+            "KPS"
+        ],
+        [
+            "852927.ETR",
+            "Lenzing AG"
+        ],
+        [
+            "540888.ETR",
+            "Leoni AG"
+        ],
+        [
+            "A12UP2.ETR",
+            "Lloyd Fonds AG"
+        ],
+        [
+            "A0STSQ.ETR",
+            "M1 Kliniken"
+        ],
+        [
+            "A0ETBQ.ETR",
+            "MBB Industries AG"
+        ],
+        [
+            "A0HGQF.ETR",
+            "Magforce"
+        ],
+        [
+            "659990.ETR",
+            "Merck KGaA"
+        ],
+        [
+            "A0KD0F.ETR",
+            "Muehlhan"
+        ],
+        [
+            "A0JKHC.ETR",
+            "Nanogate AG"
+        ],
+        [
+            "866993.ETR",
+            "Nike"
+        ],
+        [
+            "A12UP3.ETR",
+            "NorCom Information Technology"
+        ],
+        [
+            "A1H8BV.ETR",
+            "Norma Group AG"
+        ],
+        [
+            "522877.ETR",
+            "Orbis"
+        ],
+        [
+            "746100.ETR",
+            "PVA Tepla AG"
+        ],
+        [
+            "A0B65S.ETR",
+            "Paion"
+        ],
+        [
+            "555869.ETR",
+            "Paragon AG"
+        ],
+        [
+            "691660.ETR",
+            "Pfeiffer AG"
+        ],
+        [
+            "PSM777.ETR",
+            "Prosiebensat"
+        ],
+        [
+            "703712.ETR",
+            "RWE AG ST"
+        ],
+        [
+            "703714.ETR",
+            "RWE AG VZO"
+        ],
+        [
+            "A1RFMY.ETR",
+            "Rcm Beteiligungs"
+        ],
+        [
+            "703000.ETR",
+            "Rheinmetall AG"
+        ],
+        [
+            "575198.ETR",
+            "SMT Scharf AG"
+        ],
+        [
+            "716560.ETR",
+            "Sartorius AG"
+        ],
+        [
+            "A2AR94.ETR",
+            "Shop Apotheke Europe"
+        ],
+        [
+            "WAF300.ETR",
+            "Siltronic AG"
+        ],
+        [
+            "749399.ETR",
+            "Stroeer"
+        ],
+        [
+            "UNSE01.ETR",
+            "Uniper SE"
+        ],
+        [
+            "508903.ETR",
+            "United Internet AG"
+        ],
+        [
+            "750750.ETR",
+            "WashTec AG"
+        ],
+        [
+            "777523.ETR",
+            "Westag&Getalit VZO"
+        ],
+        [
+            "WNDL11.ETR",
+            "Windeln de"
+        ],
+        [
+            "511170.ETR",
+            "Zooplus AG"
+        ],
+        [
+            "A1K022.ETR",
+            "co.don"
+        ]
+    ],
+    "_3nH_list": [
+        [
+            "A11QW6.ETR",
+            "7C Solarparken"
+        ],
+        [
+            "850103.ETR",
+            "Abbott Labs"
+        ],
+        [
+            "A1EWWW.ETR",
+            "Adidas"
+        ],
+        [
+            "510300.ETR",
+            "Adva Optical"
+        ],
+        [
+            "A2ANT0.ETR",
+            "Ahold Delhaize"
+        ],
+        [
+            "938914.ETR",
+            "Airbus Group"
+        ],
+        [
+            "A117ME.ETR",
+            "Alibaba ADR"
+        ],
+        [
+            "511000.ETR",
+            "All For One Steeb AG"
+        ],
+        [
+            "A2ASUV.ETR",
+            "Anheuser Busch Inbev"
+        ],
+        [
+            "865177.ETR",
+            "Applied Materials"
+        ],
+        [
+            "886455.ETR",
+            "AstraZeneca"
+        ],
+        [
+            "A0JK2A.ETR",
+            "Aurelius"
+        ],
+        [
+            "676650.ETR",
+            "Aurubis AG"
+        ],
+        [
+            "510200.ETR",
+            "Basler AG"
+        ],
+        [
+            "A1X3YY.ETR",
+            "Bastei Lueb"
+        ],
+        [
+            "515870.ETR",
+            "Bechtle AG"
+        ],
+        [
+            "520000.ETR",
+            "Beiersdorf AG"
+        ],
+        [
+            "549309.ETR",
+            "Borussia Dortmund"
+        ],
+        [
+            "916018.ETR",
+            "British American Tobacco"
+        ],
+        [
+            "547030.ETR",
+            "CTS Eventim AG"
+        ],
+        [
+            "541910.ETR",
+            "Cancom SE"
+        ],
+        [
+            "A1KAGC.ETR",
+            "Coloplast"
+        ],
+        [
+            "CBK100.ETR",
+            "Commerzbank"
+        ],
+        [
+            "543900.ETR",
+            "Continental AG"
+        ],
+        [
+            "A0KFRJ.ETR",
+            "CytoTools"
+        ],
+        [
+            "553340.ETR",
+            "Deutsche Grundstuecksauktionen"
+        ],
+        [
+            "801900.ETR",
+            "Deutsche Pfandbriefbank AG"
+        ],
+        [
+            "630500.ETR",
+            "Deutz AG"
+        ],
+        [
+            "856244.ETR",
+            "Diebold"
+        ],
+        [
+            "555060.ETR",
+            "Draegerwerk ST"
+        ],
+        [
+            "554550.ETR",
+            "Drillisch AG"
+        ],
+        [
+            "555063.ETR",
+            "Dr\u00c3\u00a4gerwerk AG"
+        ],
+        [
+            "ENAG99.ETR",
+            "E.ON SE"
+        ],
+        [
+            "565493.ETR",
+            "Einhell VZO"
+        ],
+        [
+            "567710.ETR",
+            "Elmos AG"
+        ],
+        [
+            "522000.ETR",
+            "Enbw Energie Baden Wuerttemberg"
+        ],
+        [
+            "928624.ETR",
+            "Enel"
+        ],
+        [
+            "531350.ETR",
+            "Energiekontor"
+        ],
+        [
+            "A11QW5.ETR",
+            "Epigenomics AG"
+        ],
+        [
+            "909943.ETR",
+            "Erste Group Bank"
+        ],
+        [
+            "A1K030.ETR",
+            "Euromicron AG"
+        ],
+        [
+            "EVNK01.ETR",
+            "Evonik Industries AG"
+        ],
+        [
+            "566480.ETR",
+            "Evotec AG"
+        ],
+        [
+            "A0V9L9.ETR",
+            "Eyemaxx Real Estate"
+        ],
+        [
+            "922985.ETR",
+            "Fabasoft AG"
+        ],
+        [
+            "A2ACKK.ETR",
+            "Ferrari NV"
+        ],
+        [
+            "A1W9NS.ETR",
+            "Ferratum Oyj"
+        ],
+        [
+            "577220.ETR",
+            "Fielmann AG"
+        ],
+        [
+            "577580.ETR",
+            "Foris Beteiligungs"
+        ],
+        [
+            "577330.ETR",
+            "Fraport AG"
+        ],
+        [
+            "A0Z2ZZ.ETR",
+            "Freenet AG"
+        ],
+        [
+            "579043.ETR",
+            "Fuchs Petrolub AG VZO Pref"
+        ],
+        [
+            "A0MQWG.ETR",
+            "Geberit"
+        ],
+        [
+            "A1K020.ETR",
+            "Gesco AG"
+        ],
+        [
+            "607000.ETR",
+            "HOCHTIEF AG"
+        ],
+        [
+            "A142VP.ETR",
+            "HP Inc"
+        ],
+        [
+            "A0S848.ETR",
+            "Hamburger Hafen A-SP"
+        ],
+        [
+            "A13SX2.ETR",
+            "Hella KGaA Hueck & Co"
+        ],
+        [
+            "549532.ETR",
+            "HolidayCheck"
+        ],
+        [
+            "529720.ETR",
+            "Homag AG"
+        ],
+        [
+            "608340.ETR",
+            "Hornbach"
+        ],
+        [
+            "A1PHFF.ETR",
+            "Hugo Boss AG"
+        ],
+        [
+            "744850.ETR",
+            "IVU Traffic"
+        ],
+        [
+            "A0M46B.ETR",
+            "Iberdrola"
+        ],
+        [
+            "A11873.ETR",
+            "Inditex"
+        ],
+        [
+            "623100.ETR",
+            "Infineon"
+        ],
+        [
+            "A2AADD.ETR",
+            "Innogy"
+        ],
+        [
+            "A0JL46.ETR",
+            "ItN Nanovation"
+        ],
+        [
+            "621993.ETR",
+            "Jungheinrich AG"
+        ],
+        [
+            "657800.ETR",
+            "KHD Humboldt Wedag Int"
+        ],
+        [
+            "620440.ETR",
+            "KUKA AG"
+        ],
+        [
+            "KGX888.ETR",
+            "Kion Group AG"
+        ],
+        [
+            "719350.ETR",
+            "Koenig&Bauer AG"
+        ],
+        [
+            "A0JLZL.ETR",
+            "Kuehne & Nagel"
+        ],
+        [
+            "645000.ETR",
+            "LPKF AG"
+        ],
+        [
+            "869898.ETR",
+            "LafargeHolcim"
+        ],
+        [
+            "646450.ETR",
+            "Leifheit AG"
+        ],
+        [
+            "852927.ETR",
+            "Lenzing AG"
+        ],
+        [
+            "540888.ETR",
+            "Leoni AG"
+        ],
+        [
+            "A12UP2.ETR",
+            "Lloyd Fonds AG"
+        ],
+        [
+            "894648.ETR",
+            "Lockheed Martin"
+        ],
+        [
+            "823212.ETR",
+            "Lufthansa"
+        ],
+        [
+            "A0ETBQ.ETR",
+            "MBB Industries AG"
+        ],
+        [
+            "656990.ETR",
+            "MLP AG"
+        ],
+        [
+            "A1TNWJ.ETR",
+            "MPC Capital"
+        ],
+        [
+            "A0D9PT.ETR",
+            "MTU Aero Engines"
+        ],
+        [
+            "A0HGQF.ETR",
+            "Magforce"
+        ],
+        [
+            "593703.ETR",
+            "Man SE VZO"
+        ],
+        [
+            "549293.ETR",
+            "Masterflex"
+        ],
+        [
+            "660500.ETR",
+            "Medion AG"
+        ],
+        [
+            "658080.ETR",
+            "Mensch und Maschine Software"
+        ],
+        [
+            "659990.ETR",
+            "Merck KGaA"
+        ],
+        [
+            "663200.ETR",
+            "MorphoSys AG"
+        ],
+        [
+            "A0KPPR.ETR",
+            "Nabaltec"
+        ],
+        [
+            "883723.ETR",
+            "Nestle ADR"
+        ],
+        [
+            "A0Q4DC.ETR",
+            "Nestle SA"
+        ],
+        [
+            "522090.ETR",
+            "Nexus"
+        ],
+        [
+            "892885.ETR",
+            "Nokia ADR"
+        ],
+        [
+            "A12UP3.ETR",
+            "NorCom Information Technology"
+        ],
+        [
+            "A1H8BV.ETR",
+            "Norma Group AG"
+        ],
+        [
+            "593612.ETR",
+            "OHB AG"
+        ],
+        [
+            "522877.ETR",
+            "Orbis"
+        ],
+        [
+            "A0JKWU.ETR",
+            "Petro Welt Tech"
+        ],
+        [
+            "691660.ETR",
+            "Pfeiffer AG"
+        ],
+        [
+            "PSM777.ETR",
+            "Prosiebensat"
+        ],
+        [
+            "861149.ETR",
+            "RTL Group"
+        ],
+        [
+            "879513.ETR",
+            "RWE AG PK"
+        ],
+        [
+            "703712.ETR",
+            "RWE AG ST"
+        ],
+        [
+            "703714.ETR",
+            "RWE AG VZO"
+        ],
+        [
+            "701080.ETR",
+            "Rational AG"
+        ],
+        [
+            "A1RFMY.ETR",
+            "Rcm Beteiligungs"
+        ],
+        [
+            "703000.ETR",
+            "Rheinmetall AG"
+        ],
+        [
+            "A1W5CV.ETR",
+            "Richemont"
+        ],
+        [
+            "A0X9EJ.ETR",
+            "S&T AG"
+        ],
+        [
+            "756857.ETR",
+            "SFC Energy AG"
+        ],
+        [
+            "723530.ETR",
+            "SGL Carbon SE"
+        ],
+        [
+            "575198.ETR",
+            "SMT Scharf AG"
+        ],
+        [
+            "STRA55.ETR",
+            "STRATEC Biomedical"
+        ],
+        [
+            "919963.ETR",
+            "Sanochemia Pharmazeutika"
+        ],
+        [
+            "858872.ETR",
+            "Santander"
+        ],
+        [
+            "716560.ETR",
+            "Sartorius AG"
+        ],
+        [
+            "716563.ETR",
+            "Sartorius AG VZO"
+        ],
+        [
+            "SHA015.ETR",
+            "Schaeffler AG"
+        ],
+        [
+            "694280.ETR",
+            "Scherzer"
+        ],
+        [
+            "515623.ETR",
+            "Schweizer Electronic"
+        ],
+        [
+            "A2AFKW.ETR",
+            "Senvion"
+        ],
+        [
+            "A2DLMS.ETR",
+            "Snap"
+        ],
+        [
+            "A113Q5.ETR",
+            "Stabilus"
+        ],
+        [
+            "A0LR93.ETR",
+            "Steico"
+        ],
+        [
+            "727413.ETR",
+            "Sto KGaA"
+        ],
+        [
+            "916234.ETR",
+            "Swisscom"
+        ],
+        [
+            "SYM999.ETR",
+            "Symrise AG"
+        ],
+        [
+            "A1K023.ETR",
+            "S\u00c3\u00bcss MicroTec AG"
+        ],
+        [
+            "A0XYGA.ETR",
+            "Technotrans AG"
+        ],
+        [
+            "850775.ETR",
+            "Telefonica"
+        ],
+        [
+            "A1J5RX.ETR",
+            "Telef\u00c3\u00b3nica Deutschland GmbH"
+        ],
+        [
+            "A0STST.ETR",
+            "Tom Tailor AG"
+        ],
+        [
+            "UNSE01.ETR",
+            "Uniper SE"
+        ],
+        [
+            "508903.ETR",
+            "United Internet AG"
+        ],
+        [
+            "755150.ETR",
+            "Uzin Utz"
+        ],
+        [
+            "A0KEXC.ETR",
+            "Vectron Systems"
+        ],
+        [
+            "A0ET17.ETR",
+            "Vienna Insurance Group"
+        ],
+        [
+            "765723.ETR",
+            "Villeroy&Boch AG"
+        ],
+        [
+            "A0NC7B.ETR",
+            "Visa A"
+        ],
+        [
+            "A1XA83.ETR",
+            "Vodafone Group PLC"
+        ],
+        [
+            "777523.ETR",
+            "Westag&Getalit VZO"
+        ],
+        [
+            "852894.ETR",
+            "Wienerberger AG"
+        ],
+        [
+            "511170.ETR",
+            "Zooplus AG"
+        ],
+        [
+            "A0JLPR.ETR",
+            "Zumtobel"
+        ],
+        [
+            "A1K022.ETR",
+            "co.don"
+        ],
+        [
+            "916529.ETR",
+            "eBay"
+        ],
+        [
+            "FTG111.ETR",
+            "flatexDEGIRO AG"
+        ],
+        [
+            "620458.ETR",
+            "mVISE"
+        ],
+        [
+            "A0JML5.ETR",
+            "\u00c3\u2013sterreichische Post"
+        ]
+    ],
+    "audit_structure_1St": {
+        "a": {
+            "Con_a": {
+                "name": "Con_a",
+                "group": "Con_a",
+                "description": "SDHPGr1.shoD > {1.005} AND ((SDT1.fD > {10000}) OR (SDT1.slD > {5000}))",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "SDHPGr1sh",
+                    "SDT1f",
+                    "SDT1sl"
+                ],
+                "adjustors": [
+                    1.005,
+                    6000.0,
+                    3000.0
+                ],
+                "document_ref": "1 210317.odt: Pr 1. Con. a)"
+            }
+        },
+        "b": {
+            "Con_b": {
+                "name": "Con_b",
+                "group": "Con_b",
+                "description": "SDHPGr1.mD > {1} AND ((SDT1.fD > {10000}) OR (SDT1.slD > {5000}))",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "SDHPGr1m",
+                    "SDT1f",
+                    "SDT1sl"
+                ],
+                "adjustors": [
+                    1.0,
+                    6000.0,
+                    3000.0
+                ],
+                "document_ref": "1 210317.odt: Pr 1. Con. b)"
+            }
+        },
+        "c": {
+            "Con_c": {
+                "name": "Con_c",
+                "group": "Con_c",
+                "description": "SDHPGr1.lo D > {1} AND ((SDT1.fD > {10000}) OR (SDT1.slD > {5000}))",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "SDHPGr1lo",
+                    "SDT1f",
+                    "SDT1sl"
+                ],
+                "adjustors": [
+                    1,
+                    10000,
+                    5000
+                ],
+                "document_ref": "1 210317.odt: Pr 1. Con. c)"
+            }
+        },
+        "d": {
+            "Con_d": {
+                "name": "Con_d",
+                "group": "Con_d",
+                "description": "SDHPGr1.sh D > {0.995} AND ((SDT1.fD > {10000}) OR (SDT1.slD > {5000})) AND DTF1. D > {3}",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "SDHPGr1sh",
+                    "SDT1f",
+                    "SDT1sl",
+                    "DTF"
+                ],
+                "adjustors": [
+                    0.995,
+                    10000,
+                    5000,
+                    3
+                ],
+                "document_ref": "1 210317.odt: Pr 1. Con. d)"
+            }
+        }
+    },
+    "audit_structure_2StPr": {
+        "a1": {
+            "Con_a1": {
+                "name": "Con_a1",
+                "group": "Con_a",
+                "description": "DaysDHPlasthi simply displayed",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "DaysDHPlasthi"
+                ],
+                "adjustors": [],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. a2)"
+            }
+        },
+        "a2": {
+            "Con_a2": {
+                "name": "Con_a2",
+                "group": "Con_a",
+                "description": "DaysDHPlasthi3perc simply displayed",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "DaysDHPlasthi3perc"
+                ],
+                "adjustors": [],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. a2)"
+            }
+        },
+        "a3": {
+            "Con_a3": {
+                "name": "Con_a3",
+                "group": "Con_a",
+                "description": "DaysDHPlast20hi simply displayed",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "DaysDHPlast20hi"
+                ],
+                "adjustors": [],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. a3)"
+            }
+        },
+        "b": {
+            "Con_b1": {
+                "name": "Con_b1",
+                "group": "Con_b",
+                "description": "(DHPD / DHOCPD)e2Pcb > C2Pcb",
+                "notes": "C2Pcb  = 1.00 ... 1.20; e2Pcb=0.3; applies when DHP between 0 and 0.1999",
+                "exponent": 0.3,
+                "DHPd_from": 0.0,
+                "DHPd_to": 0.1999,
+                "C2Pcb": 1.03,
+                "C2Pcb_min": 0.0,
+                "C2Pcb_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHOCP"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. b1)"
+            },
+            "Con_b2": {
+                "name": "Con_b2",
+                "group": "Con_b",
+                "description": "(DHPD / DHOCPD)**e2Pcb > C2Pcb",
+                "notes": "C2Pcb  = 1.00 ... 1.20; e2Pcb=0.4; applies when DHP between 0.2 and 0.3999",
+                "exponent": 0.4,
+                "DHPd_from": 0.2,
+                "DHPd_to": 0.3999,
+                "C2Pcb": 1.03,
+                "C2Pcb_min": 0.0,
+                "C2Pcb_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHOCP"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. b2)"
+            },
+            "Con_b3": {
+                "name": "Con_b3",
+                "group": "Con_b",
+                "description": "(DHPD / DHOCPD)**e2Pcb > C2Pcb",
+                "notes": "C2Pcb  = 1.00 ... 1.20; e2Pcb=0.6; applies when DHP between 0.4 and 0.6999",
+                "exponent": 0.6,
+                "DHPd_from": 0.4,
+                "DHPd_to": 0.6999,
+                "C2Pcb": 1.03,
+                "C2Pcb_min": 0.0,
+                "C2Pcb_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHOCP"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. b3)"
+            },
+            "Con_b4": {
+                "name": "Con_b4",
+                "group": "Con_b",
+                "description": "(DHPD / DHOCPD)**e2Pcb > C2Pcb",
+                "notes": "C2Pcb  = 1.00 ... 1.20; e2Pcb=0.85; applies when DHP between 0.7 and 1.1999",
+                "exponent": 0.85,
+                "DHPd_from": 0.7,
+                "DHPd_to": 1.1999,
+                "C2Pcb": 1.03,
+                "C2Pcb_min": 0.0,
+                "C2Pcb_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHOCP"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. b4)"
+            },
+            "Con_b5": {
+                "name": "Con_b5",
+                "group": "Con_b",
+                "description": "(DHPD / DHOCPD)**e2Pcb > C2Pcb",
+                "notes": "C2Pcb  = 1.00 ... 1.20; e2Pcb=1; applies when DHP between 1.2 and higher",
+                "exponent": 1.0,
+                "DHPd_from": 1.2,
+                "DHPd_to": 1000000,
+                "C2Pcb": 1.03,
+                "C2Pcb_min": 0.0,
+                "C2Pcb_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHOCP"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. b5)"
+            }
+        },
+        "c": {
+            "Con_c1": {
+                "name": "Con_c1",
+                "group": "Con_c",
+                "description": "(DHPD / DHPD-1)**e2Pcb > C2Pcc",
+                "notes": "C2Pcc  = 1.00 ... 1.20; e2Pcb=0.3; applies when DHP between 0 and 0.1999",
+                "exponent": 0.3,
+                "DHPd_from": 0.0,
+                "DHPd_to": 0.1999,
+                "C2Pcc": 1.03,
+                "C2Pcc_min": 0.0,
+                "C2Pcc_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-1"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. c1)"
+            },
+            "Con_c2": {
+                "name": "Con_c2",
+                "group": "Con_c",
+                "description": "(DHPD / DHPD-1)**e2Pcb > C2Pcc",
+                "notes": "C2Pcc  = 1.00 ... 1.20; e2Pcb=0.4; applies when DHP between 0.2 and 0.3999",
+                "exponent": 0.4,
+                "DHPd_from": 0.2,
+                "DHPd_to": 0.3999,
+                "C2Pcc": 1.03,
+                "C2Pcc_min": 0.0,
+                "C2Pcc_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-1"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. c2)"
+            },
+            "Con_c3": {
+                "name": "Con_c3",
+                "group": "Con_c",
+                "description": "(DHPD / DHPD-1)**e2Pcb > C2Pcc",
+                "notes": "C2Pcc  = 1.00 ... 1.20; e2Pcb=0.6; applies when DHP between 0.6 and 0.6999",
+                "exponent": 0.6,
+                "DHPd_from": 0.4,
+                "DHPd_to": 0.6999,
+                "C2Pcc": 1.03,
+                "C2Pcc_min": 0.0,
+                "C2Pcc_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-1"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. c3)"
+            },
+            "Con_c4": {
+                "name": "Con_c4",
+                "group": "Con_c",
+                "description": "(DHPD / DHPD-1)**e2Pcb > C2Pcc",
+                "notes": "C2Pcc  = 1.00 ... 1.20; e2Pcb=0.85; applies when DHP between 0.7 and 1.1999",
+                "exponent": 0.85,
+                "DHPd_from": 0.7,
+                "DHPd_to": 1.1999,
+                "C2Pcc": 1.03,
+                "C2Pcc_min": 0.0,
+                "C2Pcc_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-1"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. c4)"
+            },
+            "Con_c5": {
+                "name": "Con_c5",
+                "group": "Con_c",
+                "description": "(DHPD / DHPD-1)**e2Pcb > C2Pcc",
+                "notes": "C2Pcc  = 1.00 ... 1.20; e2Pcb=1; applies when DHP between 1.2 and higher",
+                "exponent": 1.0,
+                "DHPd_from": 1.2,
+                "DHPd_to": 1000000,
+                "C2Pcc": 1.03,
+                "C2Pcc_min": 0.0,
+                "C2Pcc_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-1"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. c5)"
+            }
+        },
+        "d": {
+            "Con_d1": {
+                "name": "Con_d1",
+                "group": "Con_d",
+                "description": "(DHPD / DHPD-2)**e2Pcb > C2Pcd",
+                "notes": "C2Pcd  = 1.00 ... 1.20; e2Pcb=0.3; applies when DHP between 0 and 0.1999",
+                "exponent": 0.3,
+                "DHPd_from": 0.0,
+                "DHPd_to": 0.1999,
+                "C2Pcd": 1.05,
+                "C2Pcd_min": 0.0,
+                "C2Pcd_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-2"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. d1)"
+            },
+            "Con_d2": {
+                "name": "Con_d2",
+                "group": "Con_d",
+                "description": "(DHPD / DHPD-2)**e2Pcb > C2Pcd",
+                "notes": "C2Pcd  = 1.00 ... 1.20; e2Pcb=0.4; applies when DHP between 0.2 and 0.3999",
+                "exponent": 0.4,
+                "DHPd_from": 0.2,
+                "DHPd_to": 0.3999,
+                "C2Pcd": 1.05,
+                "C2Pcd_min": 0.0,
+                "C2Pcd_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-2"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. d2)"
+            },
+            "Con_d3": {
+                "name": "Con_d3",
+                "group": "Con_d",
+                "description": "(DHPD / DHPD-2)**e2Pcb > C2Pcd",
+                "notes": "C2Pcd  = 1.00 ... 1.20; e2Pcb=0.6; applies when DHP between 0.4 and 0.6999",
+                "exponent": 0.6,
+                "DHPd_from": 0.4,
+                "DHPd_to": 0.6999,
+                "C2Pcd": 1.05,
+                "C2Pcd_min": 0.0,
+                "C2Pcd_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-2"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. d3)"
+            },
+            "Con_d4": {
+                "name": "Con_d4",
+                "group": "Con_d",
+                "description": "(DHPD / DHPD-2)**e2Pcb > C2Pcd",
+                "notes": "C2Pcd  = 1.00 ... 1.20; e2Pcb=0.85; applies when DHP between 0.7 and 1.1999",
+                "exponent": 0.85,
+                "DHPd_from": 0.7,
+                "DHPd_to": 1.1999,
+                "C2Pcd": 1.05,
+                "C2Pcd_min": 0.0,
+                "C2Pcd_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-2"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. d4)"
+            },
+            "Con_d5": {
+                "name": "Con_d5",
+                "group": "Con_d",
+                "description": "(DHPD / DHPD-2)**e2Pcb > C2Pcd",
+                "notes": "C2Pcd  = 1.00 ... 1.20; e2Pcb=1; applies when DHP between 1.2 and higher",
+                "exponent": 1,
+                "DHPd_from": 1.2,
+                "DHPd_to": 1000000,
+                "C2Pcd": 1.05,
+                "C2Pcd_min": 0.0,
+                "C2Pcd_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-2"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. d5)"
+            }
+        },
+        "e": {
+            "Con_e1": {
+                "name": "Con_e1",
+                "group": "Con_e",
+                "description": "(DHPD / DHPD-3)**e2Pcb > C2Pce",
+                "notes": "C2Pce  = 1.00 ... 1.20; e2Pcb=0.3; applies when DHP between 0 and 0.1999",
+                "exponent": 0.3,
+                "DHPd_from": 0.0,
+                "DHPd_to": 0.1999,
+                "C2Pce": 1.07,
+                "C2Pce_min": 0.0,
+                "C2Pce_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-3"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. e1)"
+            },
+            "Con_e2": {
+                "name": "Con_e2",
+                "group": "Con_e",
+                "description": "(DHPD / DHPD-3)**e2Pcb > C2Pce",
+                "notes": "C2Pce  = 1.00 ... 1.20; e2Pcb=0.4; applies when DHP between 0.2 and 0.3999",
+                "exponent": 0.4,
+                "DHPd_from": 0.2,
+                "DHPd_to": 0.3999,
+                "C2Pce": 1.07,
+                "C2Pce_min": 0.0,
+                "C2Pce_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-3"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. e2)"
+            },
+            "Con_e3": {
+                "name": "Con_e3",
+                "group": "Con_e",
+                "description": "(DHPD / DHPD-3)**e2Pcb > C2Pce",
+                "notes": "C2Pce  = 1.00 ... 1.20; e2Pcb=0.6; applies when DHP between 0.4 and 0.6999",
+                "exponent": 0.6,
+                "DHPd_from": 0.4,
+                "DHPd_to": 0.6999,
+                "C2Pce": 1.07,
+                "C2Pce_min": 0.0,
+                "C2Pce_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-3"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. e3)"
+            },
+            "Con_e4": {
+                "name": "Con_e4",
+                "group": "Con_e",
+                "description": "(DHPD / DHPD-3)**e2Pcb > C2Pce",
+                "notes": "C2Pce  = 1.00 ... 1.20; e2Pcb=0.85; applies when DHP between 0.7 and 1.1999",
+                "exponent": 0.85,
+                "DHPd_from": 0.7,
+                "DHPd_to": 1.1999,
+                "C2Pce": 1.07,
+                "C2Pce_min": 0.0,
+                "C2Pce_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-3"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. e4)"
+            },
+            "Con_e5": {
+                "name": "Con_e5",
+                "group": "Con_e",
+                "description": "(DHPD / DHPD-3)**e2Pcb > C2Pce",
+                "notes": "C2Pce  = 1.00 ... 1.20; e2Pcb=1; applies when DHP between 1.2 and higher",
+                "exponent": 1,
+                "DHPd_from": 1.2,
+                "DHPd_to": 1000000,
+                "C2Pce": 1.07,
+                "C2Pce_min": 0.0,
+                "C2Pce_max": 1.2,
+                "audit_list": [
+                    "DHP",
+                    "DHP.D-3"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. e5)"
+            }
+        },
+        "f": {
+            "Con_f": {
+                "name": "Con_f",
+                "group": "Con_f",
+                "description": "(DHPGrAvlo D > C2Pcf) AND (DCP < {1.05} * DOPD-1)",
+                "notes": "C2Pcf = 0.90 ...1.10",
+                "C2Pcf": 0.98,
+                "C2Pcf_min": 0.9,
+                "C2Pcf_max": 1.1,
+                "audit_list": [
+                    "DHPGrAvLo",
+                    "DCP",
+                    "DOP.D-1"
+                ],
+                "adjustors": [
+                    1.05
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. f)"
+            }
+        },
+        "g": {
+            "Con_g": {
+                "name": "Con_g",
+                "group": "Con_g",
+                "description": "(DHPGr > C2Pcgs) AND (DHPGrAvshD-1 < C2Pcgb) AND ((DHPGrAvsh D / DHPGrAvsh D-1) > C2PcgA) AND ((DHPGrAvsh D / DHPGrAvsh D-2) > C2PcgA) AND (DHPGrDifD-1 < C2PcgD)",
+                "notes": "C2Pcgs = 0.9500 ... 1.0500; C2Pcgb = 0.9000 ... 1.0500; C2PcgA   = 1.000 ... 1.050; C2PcgD  = 0.0000 ...0.1000",
+                "C2Pcgs": 1.02,
+                "C2Pcgs_min": 0.95,
+                "C2Pcgs_max": 1.05,
+                "C2Pcgb": 0.995,
+                "C2Pcgb_min": 0.9,
+                "C2Pcgb_max": 1.05,
+                "C2PcgA": 1.0,
+                "C2PcgA_min": 1.0,
+                "C2PcgA_max": 1.05,
+                "C2PcgD": 0.1,
+                "C2PcgD_min": 0.0,
+                "C2PcgD_max": 0.1,
+                "audit_list": [
+                    "DHPgr",
+                    "DHPGrAvsh",
+                    "DHPGrAvsh.D-1",
+                    "DHPGrAvsh.D-2",
+                    "DHPGrDiF.D-1"
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. g)"
+            }
+        },
+        "h": {
+            "Con_h": {
+                "name": "Con_h",
+                "group": "Con_h",
+                "description": "DHPGrAvloD > {0.9995} AND DHPGrDislD-1-< C2Pch",
+                "notes": "C2Pch = 0.0000 ...0.0100",
+                "C2Pch": 0.9,
+                "C2Pch_min": 0.9,
+                "C2Pch_max": 1.1,
+                "audit_list": [
+                    "DHPGrAvLo",
+                    "DHPGrDiSl.D-1"
+                ],
+                "adjustors": [
+                    0.9995
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. h)"
+            }
+        },
+        "i": {
+            "Con_i": {
+                "name": "Con_i",
+                "group": "Con_i",
+                "description": "DHPGrAvshoD < {1} AND DHPGrAvloD > {1} AND DMPD > DMPD-1 AND DMPD-3 > DMPD-2 AND DCPD > DOPD",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "DHPGrAvsho",
+                    "DHPGrAvlo",
+                    "DMP",
+                    "DMP.D-1",
+                    "DMP.D-2",
+                    "DMP.D-3",
+                    "DCP",
+                    "DOP"
+                ],
+                "adjustors": [
+                    1,
+                    1
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. i)"
+            }
+        },
+        "j": {
+            "Con_j": {
+                "name": "Con_j",
+                "group": "Con_j",
+                "description": "{3} * SBrD / (SBrD-2 + SBrD-3 + SBrD-4 ) OR {1.5} * (SBrD + SBrD-1) / (SBrD-3 + SBrD-4 + SBrD-5) whichever is greater than {1.3}",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "SBr",
+                    "SBr.D-1",
+                    "SBr.D-2",
+                    "SBr.D-3",
+                    "SBr.D-4",
+                    "SBr.D-5"
+                ],
+                "adjustors": [
+                    3,
+                    1.5,
+                    1.3
+                ],
+                "document_ref": "2 Prices 210701.odt: 2. Pr In. Con. j)"
+            }
+        }
+    },
+    "audit_structure_2StVols": {
+        "a1": {
+            "Con_a1": {
+                "name": "Con_a1",
+                "group": "Con_a",
+                "description": "DVFf3D > C2Vca1 AND DHPGrDifD-1 < C2Vca1D AND DHPGrAvshD > C2Vca1A",
+                "notes": "C2Vca1 = 1.0 ... 20; C2Vca1Di = 0.000 ... 0.050; C2Vca1A = 0.9500 ... 1.0500",
+                "C2Vca1": 2.0,
+                "C2Vca1_min": 1.0,
+                "C2Vca1_max": 20.0,
+                "C2Vca1D": 0.01,
+                "C2Vca1D_min": 0.0,
+                "C2Vca1D_max": 0.05,
+                "C2Vca1A": 1.0,
+                "C2Vca1A_min": 0.95,
+                "C2Vca1A_max": 1.05,
+                "audit_list": [
+                    "DVFf3",
+                    "DHPGrDiF.D-1",
+                    "DHPGrAvSh"
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con a1)"
+            }
+        },
+        "a2": {
+            "Con_a2": {
+                "name": "Con_a2",
+                "group": "Con_a",
+                "description": "DVD / SDVBfD-2 > C2Vca2 AND  DHPGrDifD-1 < C2Vca1D AND DHPGrAvshD > C2Vca1A",
+                "notes": "C2Vca2 = 1.0 ... 20; C2Vca1Di = 0.000 ... 0.050; C2Vca1A = 0.9500 ... 1.0500",
+                "C2Vca2": 2.0,
+                "C2Vca2_min": 1.0,
+                "C2Vca2_max": 20.0,
+                "C2Vca1D": 0.001,
+                "C2Vca1D_min": 0.0,
+                "C2Vca1D_max": 0.05,
+                "C2Vca1A": 0.96,
+                "C2Vca1A_min": 0.95,
+                "C2Vca1A_max": 1.05,
+                "audit_list": [
+                    "DV",
+                    "SDVBf.D-2",
+                    "DHPGrDiF.D-1",
+                    "DHPGrAvSh"
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con a2)"
+            }
+        },
+        "b": {
+            "Con_b": {
+                "name": "Con_b",
+                "group": "Con_b",
+                "description": "DVFf1D > C2Vcb AND DHPGrDifD-1 < C2Vca1D  AND DHPGrAvshD > C2Vca1A",
+                "notes": "C2Vcb = 1.0 ... 10; C2Vca1Di = 0.000 ... 0.050; C2Vca1A = 0.9500 ... 1.0500",
+                "C2Vcb": 2.0,
+                "C2Vcb_min": 1.0,
+                "C2Vcb_max": 10.0,
+                "C2Vca1D": 0.01,
+                "C2Vca1D_min": 0.0,
+                "C2Vca1D_max": 0.05,
+                "C2Vca1A": 0.96,
+                "C2Vca1A_min": 0.95,
+                "C2Vca1A_max": 1.05,
+                "audit_list": [
+                    "DVFf1",
+                    "DHPGrDiF.D-1",
+                    "DHPGrAvSh"
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con b)"
+            }
+        },
+        "c": {
+            "Con_c": {
+                "name": "Con_c",
+                "group": "Con_c",
+                "description": "DVFmD > C2Vcc AND DHPGrDislD-1 < C2VccD AND DHPGrAvmiD > C2VccA",
+                "notes": "C2Vcc = 1.00 ... 3.00; C2VccD = 0.0000 ...  0.0500; C2Vcc = 0.9500 ... 1.0500;",
+                "C2Vcc": 1.1,
+                "C2Vcc_min": 1.0,
+                "C2Vcc_max": 3.0,
+                "C2VccD": 0.01,
+                "C2VccD_min": 0.0,
+                "C2VccD_max": 0.05,
+                "C2VccA": 0.96,
+                "C2VccA_min": 0.95,
+                "C2VccA_max": 1.05,
+                "audit_list": [
+                    "DVFm",
+                    "DHPGrDiSl.D-1",
+                    "DHPGrAvMi"
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con c)"
+            }
+        },
+        "d": {
+            "Con_d": {
+                "name": "Con_d",
+                "group": "Con_d",
+                "description": "DVFsl D > C2Vcd  AND DHPGrDislD-1 < C2VcdD AND DHPGrAvloD > C2VcdA",
+                "notes": "C2Vcd = 1.00 ...1.50; C2VcdD = 0.0000 ...  0.0500; C2VcdA = 0.9500 ... 1.0500",
+                "C2Vcd": 1.1,
+                "C2Vcd_min": 1.0,
+                "C2Vcd_max": 1.5,
+                "C2VcdD": 0.001,
+                "C2VcdD_min": 0.0,
+                "C2VcdD_max": 0.05,
+                "C2VcdA": 0.96,
+                "C2VcdA_min": 0.95,
+                "C2VcdA_max": 1.05,
+                "audit_list": [
+                    "DVFsl",
+                    "DHPGrDiSl.D-1",
+                    "DHPGrAvLo"
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con d)"
+            }
+        },
+        "e": {
+            "Con_e": {
+                "name": "Con_e",
+                "group": "Con_e",
+                "description": "{100} * DVFf2D *  [(DHPD + DHPD-1) / (DHPD-2 + DHPD-3) -1 ] > {3}",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "DVFf2",
+                    "DHP",
+                    "DHP.D-1",
+                    "DHP.D-2",
+                    "DHP.D-3"
+                ],
+                "adjustors": [
+                    100,
+                    3
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con e)"
+            }
+        },
+        "f": {
+            "Con_f": {
+                "name": "Con_f",
+                "group": "Con_f",
+                "description": "{100} * DVD / SDVCf2 D-1 * (DHPD / DHPD-1 - 1)  > {3}",
+                "notes": "NO PARAMETERS",
+                "audit_list": [
+                    "DV",
+                    "SDVCf2.D-1",
+                    "DHP",
+                    "DHP.D-1"
+                ],
+                "adjustors": [
+                    100,
+                    3
+                ],
+                "document_ref": "2 Vols 210524.odt: 2. St. Vls. Con f)"
+            }
+        }
+    },
+    "ov_at_plot_columns": [
+        "price",
+        "volume",
+        "TO",
+        "DAP",
+        "DOP",
+        "DLP",
+        "DMP",
+        "PSMV"
+    ],
+    "graph_height": 760,
+    "graph_width": 1400,
+    "setting_chart_start": "2017-01-02",
+    "setting_chart_end": "2017-03-27",
+    "fetch-txt-last-downloaded": "http://www.bsb-software.de/rese/2021_06_18.TXT",
+    "process-1-last-consumed": "\\BsbEtl\\IN\\CONSUMED\\2021_06_18.TXT",
+    "process-2-last-sharelist-name": "\\BsbEtl\\Sharelists\\Default.shl",
+    "process-2-last-csv-trawled": "\\BsbEtl\\OUT\\By_Day\\2021_06_18.TXT.CSV",
+    "process-3-last-parameters": "2017_01_02 to 2017_03_27 for sharelist Default. (61 trading days)",
+    "process-3-last-start": "2017_01_02",
+    "process-3-last-end": "2017_03_27",
+    "process-3-last-sharelist": "Default",
+    "process-3-last-tradingdays": 61
+}

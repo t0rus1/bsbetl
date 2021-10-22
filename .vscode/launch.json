@@ -1,0 +1,17 @@
+{
+    "version": "0.5.3",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "process-3",
+                "--only_share=A2DA58.ETR",
+                "--start_date=2020_01_01"
+            ]
+        }
+    ]
+}

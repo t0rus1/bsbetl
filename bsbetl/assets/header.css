@@ -1,0 +1,13 @@
+.app-header {
+    height: 36px;
+    line-height: 36px;
+    border-bottom: thick lightgrey dotted;
+    background-color: rgb(253, 253, 253);
+    padding-right: 3px;
+}
+
+.app-header .app-header--title {
+    color: dodgerblue;
+    font-size: 22px;
+    padding-left: 5px;
+}

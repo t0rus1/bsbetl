@@ -1,0 +1,142 @@
+from bsbetl import ov_helpers
+import logging
+import math
+from datetime import date
+from numpy.core.numeric import NaN
+
+import pandas as pd
+from bsbetl.alltable_calcs import Calculation
+from bsbetl.alltable_calcs.at_params import at_calc_params
+from bsbetl.calc_helpers import first_non_zero, last_trading_row_index
+
+
+class D_SlowRelativeDAP(Calculation.Calculation):
+
+    def __init__(self):
+        super().__init__('SlowRelativeDAP')
+        self.description = 'Slow Relative Daily Average Price calculation'
+        self.dependents = ['price', 'DAP']
+        self.at_computeds = ['SDAP', 'RDAP', 'SRDAP1', 'SRDAP2', 'SRDAP3', 'SRDAP4', 'SRDAP5', 'SRDAPGr1', 'SRDAPGr2', 'SRDAPGr3', 'SRDAPGr4', 'SRDAPGr5']
+        self.ov_computeds = ['SRDAP1', 'SRDAP2', 'SRDAP3', 'SRDAP4', 'SRDAP5', 'SRDAPGr1', 'SRDAPGr2', 'SRDAPGr3', 'SRDAPGr4', 'SRDAPGr5']  
+
+    def calculate(self, df: pd.DataFrame, share_num: str, dates_in_df: list, top_up: bool, stage: int):
+        ''' Implementation of Gunther's SRDAP calculation '''
+
+        assert stage == 2, f'{self.name} calculation should only run at stage 2'
+        # RDAPD = 10000 * DAPD / SDAPD
+        # With
+        # SDAPD  = SDAPD-1 + 0,01 * (DAPD - SDAPD-1)
+        # self.prepare_columns(df)
+
+        # SDAP
+        # We can assume df contains daily rows (stage must = 2)
+        # For a starting 'prior day' value for SDAP, use the first non zero DAP
+        SDAP_prior_pos, SDAP_prior = first_non_zero(df, 'DAP')
+        prior_row_index = 0
+        for row_index, row in df.iterrows():
+            if row_index > df.index[0]:
+                # not on the first loop, so prior_row_index is good
+                SDAP_prior = df.at[prior_row_index, 'SDAP']
+            DAP_cur = df.at[row_index, 'DAP']
+            # SDAP:
+            #print(DAP_cur, SDAP_prior)
+            df.at[row_index, 'SDAP'] = SDAP_prior + 0.01*(DAP_cur - SDAP_prior)
+            # set it for use next time
+            prior_row_index = row_index
+
+        # RDAP
+        df['RDAP'] = 10_000 * df['DAP'] / df['SDAP']
+
+        # 3c) Slow RDAP
+        SRDAP1_prior = first_non_zero(df, 'RDAP')[1]
+        SRDAP2_prior = SRDAP1_prior
+        SRDAP3_prior = SRDAP1_prior
+        SRDAP4_prior = SRDAP1_prior
+        SRDAP5_prior = SRDAP1_prior
+
+        srdap1 = srdap2 = srdap3 = srdap4 = srdap5 = NaN
+
+        prior_row_index = 0
+        for row_index, row in df.iterrows():
+            if row_index > df.index[0]:
+                # not on the first loop, so prior_row_index is good
+                SRDAP1_prior = df.at[prior_row_index, 'SRDAP1']
+                SRDAP2_prior = df.at[prior_row_index, 'SRDAP2']
+                SRDAP3_prior = df.at[prior_row_index, 'SRDAP3']
+                SRDAP4_prior = df.at[prior_row_index, 'SRDAP4']
+                SRDAP5_prior = df.at[prior_row_index, 'SRDAP5']
+
+            RDAP_cur = df.at[row_index, 'RDAP']
+            # SRDAP1
+            if RDAP_cur > SRDAP1_prior:
+                srdap1 = SRDAP1_prior +  at_calc_params['atp_srdap_y1RDAPu']['setting'] * \
+                    (RDAP_cur - SRDAP1_prior)**at_calc_params['atp_srdap_e1RDAPu']['setting']
+            else:
+                srdap1 = SRDAP1_prior - at_calc_params['atp_srdap_y1RDAPd']['setting'] * \
+                    (SRDAP1_prior - RDAP_cur)**at_calc_params['atp_srdap_e1RDAPd']['setting']
+            df.at[row_index, 'SRDAP1'] = srdap1
+
+            # SRDAP2
+            if RDAP_cur > SRDAP2_prior:
+                srdap2 = SRDAP2_prior + at_calc_params['atp_srdap_y2RDAPu']['setting'] * \
+                    (RDAP_cur - SRDAP2_prior)**at_calc_params['atp_srdap_e2RDAPu']['setting']
+            else:
+                srdap2 = SRDAP2_prior - at_calc_params['atp_srdap_y2RDAPd']['setting'] * \
+                    (SRDAP2_prior - RDAP_cur)**at_calc_params['atp_srdap_e2RDAPd']['setting']
+            df.at[row_index, 'SRDAP2'] = srdap2
+
+            # SRDAP3
+            if RDAP_cur > SRDAP3_prior:
+                srdap3 = SRDAP3_prior + at_calc_params['atp_srdap_y3RDAPu']['setting'] * \
+                    (RDAP_cur - SRDAP3_prior)**at_calc_params['atp_srdap_e3RDAPu']['setting']
+            else:
+                srdap3 = SRDAP3_prior - at_calc_params['atp_srdap_y3RDAPd']['setting'] * \
+                    (SRDAP3_prior - RDAP_cur)**at_calc_params['atp_srdap_e3RDAPd']['setting']
+            df.at[row_index, 'SRDAP3'] = srdap3
+
+
+            # SRDAP4
+            if RDAP_cur > SRDAP4_prior:
+                srdap4 = SRDAP4_prior + at_calc_params['atp_srdap_y4RDAPu']['setting'] * \
+                    (RDAP_cur -  SRDAP4_prior)**at_calc_params['atp_srdap_e4RDAPu']['setting']
+            else:
+                srdap4 = SRDAP4_prior - at_calc_params['atp_srdap_y4RDAPd']['setting'] * \
+                    (SRDAP4_prior - RDAP_cur)**at_calc_params['atp_srdap_e4RDAPd']['setting']
+            df.at[row_index, 'SRDAP4'] =  srdap4
+
+
+
+            # SRDAP5
+            if RDAP_cur > SRDAP5_prior:
+                srdap5 = SRDAP5_prior + at_calc_params['atp_srdap_y5RDAPu']['setting'] * \
+                    (RDAP_cur - SRDAP5_prior)**at_calc_params['atp_srdap_e5RDAPu']['setting']
+            else:
+                srdap5 = SRDAP5_prior - at_calc_params['atp_srdap_y5RDAPd']['setting'] * \
+                    (SRDAP5_prior - RDAP_cur)**at_calc_params['atp_srdap_e5RDAPd']['setting']
+            df.at[row_index, 'SRDAP5'] = srdap5
+
+            # set for use on next loop
+            prior_row_index = row_index
+
+        # 3i) Make Price Gradients of the SRDAPx, so that will be SRDAPGr1 - SRDAPGr5.
+        df['SRDAPGr1'] = df['SRDAP1'] / df['SRDAP1'].shift(1)
+        df['SRDAPGr2'] = df['SRDAP2'] / df['SRDAP2'].shift(1)
+        df['SRDAPGr3'] = df['SRDAP3'] / df['SRDAP3'].shift(1)
+        df['SRDAPGr4'] = df['SRDAP4'] / df['SRDAP4'].shift(1)
+
+        # do ov 
+        ov_helpers.global_ov_update(share_num, 'SRDAPGr1', df.at[row_index, 'SRDAPGr1'])
+        ov_helpers.global_ov_update(share_num, 'SRDAPGr2', df.at[row_index, 'SRDAPGr2'])
+        ov_helpers.global_ov_update(share_num, 'SRDAPGr3', df.at[row_index, 'SRDAPGr3'])
+        ov_helpers.global_ov_update(share_num, 'SRDAPGr4', df.at[row_index, 'SRDAPGr4'])
+
+        ov_helpers.global_ov_update(share_num, 'SRDAP1', srdap1)
+        ov_helpers.global_ov_update(share_num, 'SRDAP2', srdap2)
+        ov_helpers.global_ov_update(share_num, 'SRDAP3', srdap3)
+        ov_helpers.global_ov_update(share_num, 'SRDAP4', srdap4)
+        ov_helpers.global_ov_update(share_num, 'SRDAP5', srdap5)
+
+
+
+
+

@@ -1,0 +1,87 @@
+from datetime import timedelta
+
+import pandas as pd
+from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
+import numpy as np
+
+# from plotly import graph_objs
+# import plotly.graph_objects as go
+# from plotly.subplots import make_subplots
+
+from bsbetl import g
+from bsbetl.alltable_calcs import at_columns
+from bsbetl.app_helpers import get_stored_df_by_sharelist_entry
+from bsbetl.calc_helpers import daterange, get_start_end_date, one_day_filter
+
+
+def multiplot_dashboard_share_chart(share_name_num: str, variables: list, stage: int, data_source: str) -> tuple:
+    """ plotly express. create a chart for a share """
+
+    print(f'variables={variables}')
+    fig, ax = plt.subplots()  # Create a figure containing a single axes.
+    ax.plot([1, 2, 3, 4], [1, 4, 2, 3])  # Plot some data on the axes.
+
+    pd.options.plotting.backend = "matplotlib" # "plotly"
+
+    # user does not need to have chosen date_time, in fact its not wanted
+    try:
+        variables.remove('date_time')
+    except ValueError:
+        pass
+
+    # we no longer automatically pull the dataframe from the store
+    # (since we now support plugin filters which add arbitrary columns)
+    if data_source == 'hdf':
+        df_calcs = get_stored_df_by_sharelist_entry(share_name_num, stage)
+        #print(df_calcs.head(1))
+
+    elif data_source == 'local-store':
+        df_calcs = DataFrame(at_columns.share_dict)
+    else:
+        # should not happen
+        return
+
+    # lets not have an index
+    df_calcs.reset_index(inplace=True)
+    if stage == 1:
+        # see https://strftime.org/
+        # x_values = df_calcs['date_time']
+        # NOTE unfortunately, with stage 1 (minute granularity) plotly inserts the weekend minutes into
+        # the x_values regardless of the fact that this data IS NOT present
+        # so we resort to using the default integer range (index was deleted above)
+        x_values = df_calcs.index  # in minutes granularity - but no after hours or weekends
+        # but note the column df_calcs['date_time'] is still present, so we can use this
+        # to enable a hover lookup of integer index to obtain the actual date-time band
+        # print(df_calcs['date_time'][140254])
+    else:
+        x_values = df_calcs['date_time']
+        #print(f'x_values={x_values}')
+
+    # fig, ax = plt.subplots()
+    # ax.set_xlabel(xlabel=df_calcs.index) if stage==1 else df_calcs['date_time']
+    # ax3 = ax.twinx()
+    # rspine = ax3.spines['right']
+    # rspine.set_position(('axes', 1.15))
+    # ax3.set_frame_on(True)
+    # ax3.patch.set_visible(False)
+    # fig.subplots_adjust(right=0.7)
+
+    # df_calcs[variables[0]].plot(ax=ax, style='b-')
+    # # same ax as above since it's automatically added on the right
+    # df_calcs[variables[1]].plot(ax=ax, style='r-', secondary_y=True)
+    # df_calcs[variables[2]].plot(ax=ax3, style='g-')
+
+    # # add legend --> take advantage of pandas providing us access
+    # # to the line associated with the right part of the axis
+
+    # # ax3.legend([ax.get_lines()[0], ax.right_ax.get_lines()[0], ax3.get_lines()[0]], ['A','B','C'], bbox_to_anchor=(1.5, 0.5))
+
+    # granularity = 'minutes' if stage == 1 else 'daily'
+    # #print(f'granularity={granularity}')
+
+    # #fig.update_layout(height=800, width=1600, title_text=f'{share_name_num}    ({granularity})')    
+    # #fig.show()
+    
+
+    return (fig, df_calcs['date_time'])
