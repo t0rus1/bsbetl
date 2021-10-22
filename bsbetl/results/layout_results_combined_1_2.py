@@ -1,15 +1,14 @@
 from logging import disable
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import ALL, MATCH, Input, Output, State
-from dash.exceptions import PreventUpdate
-import dash_table
-from pandas.core.indexing import is_label_like
 
+import dash
+import dash_table
 from bsbetl import app_helpers, functions, g
 from bsbetl.app import app
 from bsbetl.func_helpers import save_and_reload_page_size
+from dash import dcc, html
+from dash.dependencies import ALL, MATCH, Input, Output, State
+from dash.exceptions import PreventUpdate
+from pandas.core.indexing import is_label_like
 
 ############################################################
 

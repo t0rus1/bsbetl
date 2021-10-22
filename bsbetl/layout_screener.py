@@ -1,24 +1,23 @@
-from bsbetl.func_helpers import save_runtime_config
 import json
 import os
 from os.path import exists
 from shutil import copyfile
 from tkinter import Checkbutton
+
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+import dash_table
 import pandas as pd
+from dash import dcc, html
 from dash.dependencies import ALL, MATCH, Input, Output, State
 from dash.exceptions import PreventUpdate
-from dash_html_components.Label import Label
-from dash_table.DataTable import DataTable
 
-from bsbetl import app_helpers, g
-from bsbetl import screener
+from bsbetl import app_helpers, g, screener
 from bsbetl.app import app
+from bsbetl.func_helpers import save_runtime_config
 # temp_import_share_symbols)
-from bsbetl.screener import (
-    create_bsb_lookup_starter, create_sharelist_from_screener_df, delete_screener_constituents, refresh_bsb_lookup)
+from bsbetl.screener import (create_bsb_lookup_starter,
+                             create_sharelist_from_screener_df,
+                             delete_screener_constituents, refresh_bsb_lookup)
 
 ############################################################
 
@@ -91,7 +90,7 @@ layout_screener = html.Div(children=[
                             ]
                         ),
                         html.Div(children=[
-                            DataTable(
+                            dash_table.DataTable(
                                 id='bsb-lookup-datatable',
                                 columns=app_helpers.get_bsb_lookup_columns(),
                                 page_size=100,
@@ -219,7 +218,7 @@ layout_screener = html.Div(children=[
                             children='',
                             className='sw-muted-label',
                         ),
-                        DataTable(
+                        dash_table.DataTable(
                             id='bsb-combined-datatable',
                             columns=[{"name": i, "id": i}
                                      for i in g.INVESTING_COM_SCREENER_COLS],
@@ -338,7 +337,7 @@ layout_screener = html.Div(children=[
                             ]
                         ),
                         html.Div(children=[
-                            DataTable(
+                            dash_table.DataTable(
                                 id='screener-use-datatable',
                                 # columns=[{"name": i, "id": i} for i in g.INVESTING_COM_USABLE_SCREENER_COLS],
                                 columns=app_helpers.get_use_screener_columns(),

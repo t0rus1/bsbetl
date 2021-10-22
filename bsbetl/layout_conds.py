@@ -1,19 +1,18 @@
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 from dash.dependencies import ALL, MATCH, Input, Output, State
 from dash.exceptions import PreventUpdate
 
 from bsbetl import app_helpers
-#from bsbetl.app_helpers import dp_stage2_conditions_formfields
 from bsbetl.app import app
 from bsbetl.ov_calcs import ov_params
-#from bsbetl.results_initial.dp_conditions import dp_init_conditions, dp_init_min_max_value_condition
-#from bsbetl.results_initial.dv_conditions import dv_init_conditions, dv_init_min_max_value_condition
-#from bsbetl.results_stage2.dp_stage2_conditions import dp_stage2_conditions, dp_stage2_min_max_value_condition
-from bsbetl.results._1St_conditions import _1St_conditions,_1_min_max_value_condition
-from bsbetl.results._2StPr_conditions import _2StPr_conditions,_2StPr_min_max_value_condition
-from bsbetl.results._2StVols_conditions import _2StVols_conditions,_2StVols_min_max_value_condition
-from bsbetl.results._3jP_conditions import _3jP_conditions ,_3jP_min_max_value_condition
+from bsbetl.results._1St_conditions import (_1_min_max_value_condition,
+                                            _1St_conditions)
+from bsbetl.results._2StPr_conditions import (_2StPr_conditions,
+                                              _2StPr_min_max_value_condition)
+from bsbetl.results._2StVols_conditions import (
+    _2StVols_conditions, _2StVols_min_max_value_condition)
+from bsbetl.results._3jP_conditions import (_3jP_conditions,
+                                            _3jP_min_max_value_condition)
 
 ############################################################
 

@@ -1,6 +1,6 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
+
 import dash_table
 from bsbetl import app_helpers, g
 from bsbetl.app import app

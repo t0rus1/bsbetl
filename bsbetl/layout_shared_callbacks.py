@@ -1,9 +1,5 @@
-import os
 from os.path import exists
-import re
-
 from dash.dependencies import ALL, MATCH, Input, Output, State
-
 from bsbetl.app import app
 
 ''' callbacks here are referenced in more than one layout '''

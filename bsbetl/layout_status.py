@@ -1,6 +1,5 @@
+from dash import dcc, html
 from dash.dependencies import Input, Output
-import dash_core_components as dcc
-import dash_html_components as html
 
 from bsbetl.app import app
 from bsbetl.functions import read_status_report_md, write_status_report_md

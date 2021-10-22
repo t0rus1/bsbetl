@@ -2,8 +2,6 @@ import os
 import re
 from os.path import exists
 
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_table
 from bsbetl import app_helpers, g
 from bsbetl.alltable_calcs import at_columns, at_params
@@ -12,12 +10,10 @@ from bsbetl.func_helpers import save_and_reload_page_size
 from bsbetl.functions import read_status_report_md, write_status_report_md
 from bsbetl.ov_calcs import frt_columns, ov_columns, ov_params
 from bsbetl.plots import plot_dashboard_share_chart
+from dash import dcc, html
 from dash.dash import no_update
 from dash.dependencies import ALL, MATCH, Input, Output, State
 from dash.exceptions import PreventUpdate
-from dash_core_components.Checklist import Checklist
-from dash_core_components.Dropdown import Dropdown
-from dash_html_components.Span import Span
 
 layout_frt = [
     html.H3(

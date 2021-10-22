@@ -2,21 +2,15 @@ import os
 import re
 from os.path import exists
 
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_table
+from dash import dcc, html
 from dash.dependencies import ALL, MATCH, Input, Output, State
 from dash.exceptions import PreventUpdate
-from dash_core_components.Checklist import Checklist
-from dash_core_components.Dropdown import Dropdown
-from dash_html_components.Span import Span
 
-#from flask_caching import Cache
-#from bsbetl.app import cache
 from bsbetl import app_helpers, g
 from bsbetl.app import app
-from bsbetl.func_helpers import save_and_reload_page_size, save_runtime_config
 from bsbetl.app_helpers import init_page_size_input, ov_data_style
+from bsbetl.func_helpers import save_and_reload_page_size, save_runtime_config
 from bsbetl.ov_calcs import ov_columns, ov_params
 from bsbetl.plots import plot_dashboard_share_chart
 

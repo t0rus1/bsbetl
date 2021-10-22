@@ -1,19 +1,17 @@
-#from bsbetl.cli import start
-#from bsbetl.functions import get_date_for_busdays_back, provide_datepicker
 from os import environ
-from dash.development.base_component import Component
-import dash_core_components as dcc
-import dash_html_components as html
-from dash.dependencies import ClientsideFunction, Input, Output
-from dash_html_components.Button import Button
-#from dash_html_components.Button import Button
 
+from dash import dcc, html
+from dash.dependencies import ClientsideFunction, Input, Output
+from dash.development.base_component import Component
 from flask import request
 
+from bsbetl import (g, layout_at, layout_at_charts, layout_conds, layout_ov,
+                    layout_parms, layout_screener, layout_shl, layout_status)
 from bsbetl.app import app
-#from bsbetl.app import cache
-from bsbetl.results import (layout_results_1St, layout_results_2StPr, layout_results_2StVols, layout_results_combined_1_2, layout_results_3jP, layout_results_3V2d, layout_results_3nH, layout_results_frt)
-from bsbetl import (g, layout_ov, layout_at, layout_screener, layout_shl, layout_status, layout_parms, layout_conds, layout_at_charts) 
+from bsbetl.results import (layout_results_1St, layout_results_2StPr,
+                            layout_results_2StVols, layout_results_3jP,
+                            layout_results_3nH, layout_results_3V2d,
+                            layout_results_combined_1_2, layout_results_frt)
 
 
 def serve_layout():

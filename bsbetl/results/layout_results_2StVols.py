@@ -1,12 +1,11 @@
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_table
 from bsbetl import app_helpers, g
 from bsbetl.app import app
 from bsbetl.app_helpers import init_page_size_input
 from bsbetl.func_helpers import save_and_reload_page_size
 from bsbetl.results._2StVols_conditions import _2StVols_conditions
+from dash import dcc, html
 from dash.dependencies import ALL, MATCH, Input, Output, State
 from dash.exceptions import PreventUpdate
 

@@ -1,17 +1,16 @@
-from bsbetl.plots import plot_dashboard_share_chart
 import json
 from datetime import date, datetime
 
-from numpy.lib.utils import lookfor
-from bsbetl import app_helpers, g
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 from dash.dependencies import ALL, MATCH, Input, Output, State
 from dash.exceptions import PreventUpdate
+from numpy.lib.utils import lookfor
 
+from bsbetl import app_helpers, g
 from bsbetl.app import app
-from bsbetl.functions import provide_datepicker
 from bsbetl.func_helpers import save_runtime_config
+from bsbetl.functions import provide_datepicker
+from bsbetl.plots import plot_dashboard_share_chart
 
 ''' all-table charts '''
 

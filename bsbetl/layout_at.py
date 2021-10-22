@@ -1,14 +1,11 @@
 import math
+
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
 import dash_table
+from dash import dcc, html
 from dash.dependencies import (ALL, MATCH, ClientsideFunction, Input, Output,
                                State)
 from dash.exceptions import PreventUpdate
-from dash_core_components.Checklist import Checklist
-from dash_core_components.Dropdown import Dropdown
-from dash_html_components.H3 import H3
 from numpy.lib.function_base import append
 from pandas.core.accessor import PandasDelegate
 
@@ -16,7 +13,9 @@ from bsbetl import app_helpers, g
 from bsbetl.alltable_calcs import at_columns
 from bsbetl.app import app
 from bsbetl.app_helpers import at_data_style, init_page_size_input
-from bsbetl.func_helpers import config_shares_list_2_names_or_numbers, save_and_reload_page_size, save_runtime_config
+from bsbetl.func_helpers import (config_shares_list_2_names_or_numbers,
+                                 save_and_reload_page_size,
+                                 save_runtime_config)
 from bsbetl.plots import plot_dashboard_share_chart
 
 layout_at = [
